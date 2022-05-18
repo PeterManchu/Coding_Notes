@@ -3,4 +3,4 @@ Dictionary
 As of Python version 3.7, dictionaries are ordered. In Python 3.6 and earlier, dictionaries are unordered.
 
 A dictionary as a set of key: value pairs, with the requirement that the keys are unique (within one dictionary).
-dictionart = {key:value}
+dictionart = {key:value, ...}
