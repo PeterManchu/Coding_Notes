@@ -24,3 +24,25 @@ If substring doesn't exist inside the string, it raises a ValueError exception.
 The index() method is similar to the find() method for strings.
 
 The only difference is that find() method returns -1 if the substring is not found, whereas index() throws an exception.
+
+(3)
+IndexError: string index out of range
+
+values = {'I': 1, 'V': 5, 'X': 10, 'L': 50, 'C': 100, 'D': 500, 'M': 1000}
+class Solution:
+    def romanToInt(self, s: str) -> int:
+        total = 0
+        i = 0
+        while (i < len(s)):
+            if values[s[i]] < values[s[i + 1]] and i + 1 < len(s):
+                total += values[s[i + 1]] - values[s[i]]
+                i += 2
+            else:
+                total += values[s[i]]
+                i += 1
+        return total
+       
+line 37 will throw an Error: string index out of range
+if values[s[i]] < values[s[i + 1]] and i + 1 < len(s):
+should be 
+if i + 1 < len(s) and values[s[i]] < values[s[i + 1]]:
